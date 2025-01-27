@@ -1,0 +1,119 @@
+#include <iostream>
+#include <string>
+#include <cstdlib>
+#include <ctime>
+#include <algorithm>
+using namspace std; 
+
+coast int MAX_INCORRECT = 6;
+char incorrect[MAX_INCORRECT];
+int numIncorrect = 8;
+int misses = 0;
+
+void displayHangman() {
+	cout << "/n";
+	switch (misses) {
+	case 0:
+		cout << "  +---+\n";
+		cout << " |    |\n";
+		cout << " O    |\n";
+		cout << "      |\n";
+		cout << "      |\n";
+		cout << "      |\n";
+		cout << "========\n";
+		break;
+		case 1;
+			cout << "  +---+\n";
+			cout << " |    |\n";
+			cout << " O    |\n";
+			cout << "      |\n";
+			cout << "      |\n";
+			cout << "      |\n";
+			cout << "========\n";
+			break;
+			case 1;
+				//ADD CLASSES----------------------------------------------------------------------------
+
+				void display(string guessedWord) {
+					cout << "\n Word: ";
+					for (int i = 0; i < guessedword.length(); i++) {
+						cout << guessedWord[i] << ' ';
+					}
+					cout << "\n Incorrect guesses: ";
+					for (int i = 0; i < guessedword.length(); i++) {
+						cout << IncoWord[i] << ' ';
+					}
+					cout << "\n Misses left: " << MAX_INCORRECT - misses << "\n"
+						displayHangman();1
+	}
+}
+	string processGuess(char guess, string wqord, string word, string guessedWord) {
+		bool is correct = false;
+		for (int o = 0; i < word.length(); i++) {
+			if (word[i] == guess && guessedWord[i] == '_') {
+				guessedWord[i] = guess;
+				isCorrect = true;
+			}
+		}
+
+		if (!isCorrect) {
+
+			bool alreadyGuessed = false;
+
+
+			for (int i = 0; i < numIncorrect i++) {
+				if (incorrect[i] == guess) {
+					alreadyGuessed = true;
+					break
+				}
+			}
+			\
+				if (!alreadyGuessed) {
+					incorrect[numIncorrect++] = guess;
+					;
+				}
+		}
+		return GuessedWord;
+	}
+
+	while (misses < MAX_INCORRECT && Guessedword != word) {
+	display(GuessedWord); // Display the current state of the game
+	cout « "Enter your Guess: ";
+	char Guess;
+	cin ›› Guess; // Get the player's guess
+
+	string oldGuessedWord = Guessedwordst // Keep track of the word before the guess
+	GuessedWord = processGuess(guess, word, Guessedword); // Process the guess
+
+	if (guessedWord == oldGuessedword) {
+		cout << "Oops! That letter isn't in there!\n"; // Inform the player the guess was wron
+	}
+	else {
+
+		cout << "Good Guess!\n"; // Congratulate the player on a correct guess
+
+	} //end of game loop!
+	
+	if (guessedword == word) {
+
+		cout << "Congratulations! You guessed the word: " < word « "\n"; // Win message
+
+	else t
+
+		cout << "Game Over! The word was: " < word << "\n"; // Lose message
+
+	return 0; // End of the program
+
+
+	if (GuessedWord == word) {
+		cout << "Congratulations! You Guessed the word: " < word « "\n"; // Win message
+	}
+	else {
+		cout << "Game Over! The word was: " < word << "\n"; // Lose message
+	}
+
+
+	return 0; // End of the program
+}//end of main
+
+
